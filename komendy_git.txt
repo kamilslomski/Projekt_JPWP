@@ -1,0 +1,39 @@
+Konfiguracja narzędzia git
+git config --global user.name "Your Name"
+git config --global user.email your_email_address@example.com
+
+Stworzenie repozytorium( w folderze w którym jesteśmy)
+git init
+
+Status zmian
+git status
+
+Zobaczenie logow
+git log
+
+Dodanie pliku do śledzonych przez git'a
+git add (nazwa pliku)
+
+Zapisanie zmian
+git commit -m "Komentarz co zmienione"
+
+git commit -am "Komentarz" - dodanie wszystkich zmienionych plików śledzonych 
+
+Wrzucenie zmian 
+git push
+
+Pobranie repozytorium 
+git pull
+git pull --rebase - jeśli jest zmiana w  tym samym pliku, ale nie bezpośrednio w tym samym miejscu
+
+Użycie git rm (usuwanie):
+
+git rm file1.txt
+git commit -m "remove file1.txt"
+Ale jeśli chcesz usunąć plik tylko z repozytorium Git, a nie usunąć go z systemu plików, użyj:
+
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
+I wypychanie zmian do zdalnego repo
+
+git push origin branch_name  
