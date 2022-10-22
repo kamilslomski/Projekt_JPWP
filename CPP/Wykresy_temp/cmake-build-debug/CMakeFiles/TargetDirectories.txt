@@ -1,0 +1,3 @@
+/Users/kamilslomski/Programowanie/CPP/Wykresy/cmake-build-debug/CMakeFiles/Projekt_2_pop.dir
+/Users/kamilslomski/Programowanie/CPP/Wykresy/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kamilslomski/Programowanie/CPP/Wykresy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
