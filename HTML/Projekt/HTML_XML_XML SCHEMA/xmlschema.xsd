@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="project" >
+		<xs:complexType >
+			<xs:sequence>
+				<xs:element name="author" type="authorType"/>
+				<xs:element name="information" type="informationType"/>
+				<xs:element name="facts" type="factsType" />
+				<xs:element name="links" type="linksType" />
+				<xs:element name="media" type="mediaType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="authorType">
+		<xs:sequence>
+			<xs:element name="name" type="shortStringType" />
+			<xs:element name="surname" type="longStringType" />
+			<xs:element name="album" type="albumType"/>
+			<xs:element name="email">
+				<xs:simpleType>
+					<xs:union memberTypes="shortStringType longStringType" />
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="lang" default="PL"	>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="([A-Z])*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="informationType">
+		<xs:sequence>
+			<xs:element name="disciplines" >
+				<xs:complexType >
+					<xs:sequence>
+						<xs:element name="discipline" type="disciplineType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="disciplineType">
+		<xs:sequence>
+			<xs:element name="content" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="explication" type="explicationType" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="disc"/>
+	</xs:complexType>
+
+		<xs:attributeGroup name="disc">
+ 			<xs:attribute name="category" type="categoryType" />
+			<xs:attribute name="id" type="xs:byte" />
+		</xs:attributeGroup>
+
+	<xs:complexType name="factsType">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="subtitle" >
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="thema" type="xs:string" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>	
+			</xs:element>
+			<xs:element name="text" type="xs:string" />
+		</xs:sequence>
+		<xs:attribute name="about" type="xs:string" />
+	</xs:complexType>
+	
+	
+		
+
+
+	<xs:complexType name="linksType">
+		<xs:sequence>
+			<xs:element ref="link" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="linkType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="source"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="link" type="linkType" />
+	
+
+	<xs:complexType name="mediaType">
+		<xs:sequence>
+			<xs:element ref="image" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="imageType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="source"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:attribute name="source" type="xs:anyURI"/>
+	<xs:element name="image" type="imageType" />
+
+	<xs:simpleType name="shortStringType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="longStringType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="categoryType" >
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="zespolowe" />
+			<xs:enumeration value="indywidualne" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="albumType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="100000"/>
+      		<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="explicationType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="500" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl.xsl"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xmlschema.xsd">
+   <author lang="PL">
+		<name>Kamil</name>
+		<surname>Slomski</surname>
+        <album>184743</album>
+        <email>s184743@student.pg.edu.pl</email>
+	</author>
+    <information>
+        <disciplines>
+            <discipline category="zespolowe" id="1">
+                <content>Piłka nozna </content>
+                <explication>
+                    Jest to najpopularniejsza gra zespołowa z około 4 miliardami fanów na całym świecie. Na boisku do gry znajdują się 2 druzyny skladajace sie z 11 zawodników (10+bramkarz). Piłke w czasie gry mozna uderzać głową, nogą, klatką piersiową itp., jedynie nie wolno uzywać rąk (oprócz oczywiście bramkarza). Wygrywa druzyna która strzeli więcej bramek podczas meczu. 
+                </explication>
+            </discipline>
+            <discipline category="zespolowe" id="2">
+                <content>Piłka ręczna </content>
+                <explication>
+                   Zespołowa dyscyplina sportu (gra drużynowa), biorą udział dwie ekipy po 7 zawodników każda. Celem gry jest zdobycie jak największej liczby bramek. Piłka może być rzucana, popychana, łapana, uderzana i zatrzymywana. Zawodnicy, oprócz bramkarzy, nie mają prawa zrobić więcej niż 3 kroki z piłką w rękach, co wymusza bieg z kozłowaniem i liczne podania.
+                </explication>
+            </discipline>
+            <discipline category="zespolowe" id="3">
+                <content>Siatkówka </content>
+                <explication>
+                    Sport drużynowy, w którym biorą udział dwa zespoły po 6 zawodników w każdym (rozgrywający, atakujący, dwóch środkowych i dwóch przyjmujących, libero). Na boisku przebywa jednak tylko sześciu zawodników, libero zmienia się ze środkowym będącym w linii obrony, gdy drużyna przyjmuje zagrywkę. Wygrywa druzyna ktora wygra 3 sety - jeden set to zdobycie 25 puntów.
+                </explication>
+            </discipline>
+            <discipline category="indywidualne" id="4">
+                <content>Łyzwiastwo szybkie </content>
+                <explication>
+                    Dyscyplina zimowa, w której celem zawodnika jest jak najszybsze przejechanie na łyżwach określonego dystansu po torze lodowym. Sportowca uprawiającego łyżwiarstwo szybkie nazywa się panczenistą. Łyżwiarze startują w parach i każdy z nich jedzie na zmianę po torze wewnętrznym i zewnętrznym. Zawodnicy jadący w danej parze nie eliminują się wzajemnie, ważny jest jedynie czas, jaki osiągnął każdy z nich. 
+                </explication>
+            </discipline>
+            <discipline category="indywidualne" id="5">
+                <content>Pływanie </content>
+                <explication>
+                    Zawody pływackie odbywają się na pływalniach 50 i 25-metrowych. Na długich basenach rozgrywa się najważniejsze imprezy pływackie. W pływaniu sportowym wyróżnia się cztery style: motylkowy (motyl, motylek, delfin), grzbietowy (grzbiet), klasyczny (zabka), dowolny.
+                </explication>
+            </discipline>
+            <discipline category="indywidualne" id="6">
+                <content>Tenis ziemny </content>
+                <explication>
+                    Dyscyplina sportowa rozgrywana na korcie tenisowym, polegająca na przebijaniu rakietą tenisową piłki ponad lub obok siatki na pole przeciwnika. Może być rozgrywana pojedynczo (tzw. singel) lub w dwuosobowych zespołach zawodników jednej płci (debel) lub obu (mikst). Tenis należał do grona letnich dyscyplin olimpijskich w latach 1896–1924. Do ich programu powrócił w 1988.
+                </explication>
+            </discipline>
+        </disciplines>
+	</information>
+    <facts about="Sport">
+		<title>Dlaczego warto uprawiać sport?</title>
+        <subtitle thema="odpornosc">Aktywność fizyczna ma duży wpływ na układ immunologiczny</subtitle>
+		<text>
+			Z pewnością znasz powiedzenie „Sport to zdrowie”. To stwierdzenie absolutnie nie jest przesadzone. Regularna aktywność fizyczna poprawia oddychanie, wzmacnia serce, wytrzymałość i układ  immunologiczny, a nawet zwiększa średnią długość życia. To doskonały sposób, aby zadbać o sienie i być w dobrej formie.
+            Często łapiesz przeziębienie i zastanawiasz się, jak wzmocnić układ odpornościowy? Jest na to panaceum – sport! Regularne ćwiczenia wzmocnią Twój system immunologiczny, co potwierdziły liczne badania INSERM (Narodowy Instytut Zdrowia i Badań Medycznych)
+		</text>
+    </facts>
+    <links>
+			<link source="https://www.youtube.com">YouTube</link>
+			<link source="https://www.twitter.com">Twitter</link>
+			<link source="https://www.facebook.com">Facebook</link>
+	</links>    
+    <media>
+        <image source="img/2m.jpg">Pilka nozna</image>
+        <image source="img/1m.jpg">Pilka reczna</image>
+        <image source="img/4m.jpg">Siatkowka</image>
+        <image source="img/3m.jpg">Łyzwiastwo</image>
+        <image source="img/5m.jpg">Pływanie</image>
+    </media>
+</project>

@@ -1,0 +1,38 @@
+<!ELEMENT project (author,information,facts,links,media)> 
+    <!ELEMENT author (name,surname, album, email)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT surname (#PCDATA)>
+        <!ELEMENT album (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+    <!ELEMENT information (disciplines)>
+        <!ELEMENT disciplines (discipline+)>
+            <!ELEMENT discipline (content, explication)>
+                <!ELEMENT content (#PCDATA)>
+                <!ELEMENT explication (#PCDATA)>
+    <!ELEMENT facts (title,subtitle,text)>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT subtitle (#PCDATA)>
+        <!ELEMENT text (#PCDATA)>
+    <!ELEMENT links (link+)>
+        <!ELEMENT link (#PCDATA)>
+    <!ELEMENT media (image+)>
+        <!ELEMENT image (#PCDATA)>
+
+<!ENTITY name "Kamil"> 
+<!ENTITY surname SYSTEM "surname.xml">
+
+<!ATTLIST discipline category (zespolowe|indywidualne) #REQUIRED>
+<!ATTLIST discipline id NMTOKEN #REQUIRED>
+<!ATTLIST author lang CDATA #REQUIRED>
+<!ATTLIST facts about CDATA #IMPLIED>
+<!ATTLIST subtitle thema CDATA #REQUIRED>  
+<!ATTLIST project xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance">
+<!ATTLIST project xsi:noNamespaceSchemaLocation NMTOKEN #REQUIRED>
+<!ATTLIST image source CDATA #REQUIRED>
+<!ATTLIST link source CDATA #REQUIRED>
+
+
+
+
+
+
