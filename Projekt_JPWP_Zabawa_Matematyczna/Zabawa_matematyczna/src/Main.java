@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Body body = new Body();
+        Window w= new Window("Zabawa Matematyczna");
+        w.setVisible(true);
 
     }
 }

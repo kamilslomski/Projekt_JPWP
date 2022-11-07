@@ -2,11 +2,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-
 public class Body implements ActionListener {
 
     int firstNum,secondNum,task,userPick, dif;
     int correct_guesses=0;
+    int time=0;
     Random liczba = new Random();
     public Body(){
 
