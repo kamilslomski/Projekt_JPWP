@@ -2,146 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#1">
-      <change afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zabawa_matematyczna.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Body.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab4_c#/lab4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab4_c#/lab4_c#.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/.vs/WindowsFormsApp1/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/.vs/WindowsFormsApp1/v15/Server/sqlite3/db.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/.vs/WindowsFormsApp1/v15/Server/sqlite3/storage.ide" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/.vs/WindowsFormsApp1/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/.vs/WindowsFormsApp1/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Form1.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Form1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Form1.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Info.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Properties/Resources.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Properties/Resources.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Properties/Settings.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/Properties/Settings.settings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/WindowsFormsApp1.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/Info.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/WindowsFormsApp1.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/WindowsFormsApp1.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/WindowsFormsApp1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.Form1.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.Properties.Resources.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csproj.GenerateResource.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../C#/lab5_c#/lab5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/.idea/Labirynt_cpp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/Projekt _1_tresc.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/reply/cache-v2-5ac706515fe75a1d4bea.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-f2bf0533c38ffaade520.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-0fbae3419c2ee07ec3f8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/reply/index-2022-10-22T20-49-59-0663.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/reply/target-Labirynt_cpp-Debug-e6253b6bd18a19c6d5de.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-5b833b81ddf072f33d87.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.ninja_deps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/.ninja_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/Labirynt_cpp.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/Labirynt_cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/build.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Labirynt_cpp/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/.idea/Projekt_2_pop.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/AAPL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/INTC.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/MSFT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/NTDOY.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/reply/cache-v2-6042ce37da08881ce688.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-0d47ace3313dd46bc772.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-83fa4ce146c1568a3fa7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/reply/index-2022-10-22T21-00-23-0924.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/reply/target-Projekt_2_pop-Debug-ea7a82325adf52670e26.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-5b833b81ddf072f33d87.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.ninja_deps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/.ninja_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/Projekt_2_pop.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/Projekt_2_pop" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/build.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/cmake-build-debug/wykres.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CPP/Wykresy_temp/projekt_2_tresc.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667808535911</updated>
-      <workItem from="1667808538212" duration="7038000" />
+      <workItem from="1667808538212" duration="9898000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1667811469049</created>
@@ -229,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667814037158</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#1">
+      <created>1667815864201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667815864201</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +110,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="pb/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -251,5 +133,16 @@
     <MESSAGE value="#2" />
     <MESSAGE value="#1" />
     <option name="LAST_COMMIT_MESSAGE" value="#1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Window.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
