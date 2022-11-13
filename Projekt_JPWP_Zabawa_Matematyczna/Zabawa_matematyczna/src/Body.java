@@ -1,48 +1,87 @@
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Body implements ActionListener {
+public class Body extends JPanel implements ActionListener, KeyListener {
+    Timer timer = new Timer(5, this);
+    int x, vx, y, vy = 0;
 
-    int firstNum,secondNum,task,userPick, dif;
-    int correct_guesses=0;
-    int time=0;
-    Random liczba = new Random();
-    public Body(){
-
+    Body()
+    {
+        setBackground(Color.WHITE);
+        setLayout(new GridBagLayout());
+        timer.start();
+        addKeyListener(this);
+        setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
     }
-    public void difficultyLevel(){
 
-        if (userPick == 1) {dif=11;}
-        else if (userPick == 2) {dif=32;}
-        else if (userPick == 3) {dif=101;}
-
+    public void paintComponent(Graphics d)
+    {
+        super.paintComponent(d);
+        d.setColor(Color.RED);
+        d.fillRect(x,y,20,20);
     }
-    public void drawNumber(){
 
-        firstNum=liczba.nextInt(dif);
-        secondNum=liczba.nextInt(dif);
 
-    }
-    public void Question(){
-
-    }
-    public void nextQuestion(){
-
-    }
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
+        if(x<0)
+        {
+            x=0;
+            vx=0;
+        }
+        if(x>1245)
+        {
+            x=1245;
+            vx=0;
+        }
+        if(y<0)
+        {
+            y=0;
+            vy=0;
+        }
+        if(y>462)
+        {
+            y=462;
+            vy=0;
+        }
+
+        x = x+vx;
+        y = y+vy;
+        repaint();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
 
     }
-     public void Answer(){
-        int ans1,ans2,ans3,ans4;
-        ans1=firstNum*secondNum;
-        ans2=liczba.nextInt(dif)* liczba.nextInt(dif);
-        ans3=liczba.nextInt(dif)* liczba.nextInt(dif);
-        ans4=liczba.nextInt(dif)* liczba.nextInt(dif);
-     }
 
-     public void results(){
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+        int c = e.getKeyCode();
+        if(c == KeyEvent.VK_LEFT)
+        {vx=-5; vy=0;}
+        if(c == KeyEvent.VK_RIGHT)
+        { vx=5; vy=0; }
+        if(c == KeyEvent.VK_UP)
+        { vy=-5; vx=0; }
+        if(c == KeyEvent.VK_DOWN)
+        { vy=5; vx=0; }
+    }
 
-     }
+    @Override
+    public void keyReleased(KeyEvent e)
+    {
+        int c = e.getKeyCode();
+        if(c == KeyEvent.VK_LEFT) { vx=0; }
+        if(c == KeyEvent.VK_RIGHT) { vx=0; }
+        if(c == KeyEvent.VK_UP) { vy=0; }
+        if(c == KeyEvent.VK_DOWN) { vy=0; }
+    }
 }
