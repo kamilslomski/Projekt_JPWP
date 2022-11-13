@@ -84,4 +84,6 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         if(c == KeyEvent.VK_UP) { vy=0; }
         if(c == KeyEvent.VK_DOWN) { vy=0; }
     }
+
+
 }

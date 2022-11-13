@@ -27,6 +27,7 @@ public class Window extends  JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         top = new JPanel();
+        //top.setFont(getFont().deriveFont(Font.BOLD, 20)); coś nie dziala - musze poczytać
         top.setPreferredSize(new Dimension(1280, 200));
         top.setLayout(new GridLayout(1, 3));
         top.setBackground(Color.LIGHT_GRAY);
@@ -119,16 +120,10 @@ public class Window extends  JFrame implements ActionListener {
         answer.add(answer_labelC);
         answer.add(answer_labelD);
 
-        //top.add(time, BorderLayout.CENTER);
+
 
         bottom.add(przyciski,BorderLayout.CENTER);
-        /*
-        bottom.add(exit);
-        bottom.add(easy);
-        bottom.add(normal);
-        bottom.add(hard);
 
-         */
 
         add(top, BorderLayout.NORTH);
         add(panel, BorderLayout.CENTER);
