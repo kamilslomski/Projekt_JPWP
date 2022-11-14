@@ -5,6 +5,7 @@ public class liczenie {
 
     static int min;
     static int max;
+
     public static String easy() {
        String liczba;
        int wynik;
@@ -44,16 +45,9 @@ public class liczenie {
         wynik=pierwsza*druga;
         return liczba;
     }
-    public int zegar(){
-        long current = System.currentTimeMillis();
-        int i = 0;
-        while(i <= 1000)
-        {
-            if(System.currentTimeMillis() - current > 1000) {
-                System.out.println(i++);
-                current = System.currentTimeMillis();
-            }
-        }
-        return i;
-    }
+
+
+
+
 }
+

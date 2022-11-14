@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 
 public class Window extends  JFrame implements ActionListener {
@@ -11,7 +12,6 @@ public class Window extends  JFrame implements ActionListener {
     JPanel przyciski;
     JPanel bottom;
     JPanel answer;
-    JPanel time;
    JButton exit;
    JButton easy;
    JButton normal;
@@ -19,6 +19,12 @@ public class Window extends  JFrame implements ActionListener {
    JLabel timeLabel;
    JLabel result;
    JLabel question;
+   JLabel counterLabel;
+   Font font1 = new Font("Arial", Font.PLAIN, 70);
+   Timer timer;
+   int second, minute;
+   String ddSecond, ddMinute;
+   DecimalFormat dFormat = new DecimalFormat("00");
 
      Window(String nazwa) {
         super(nazwa);
@@ -74,13 +80,28 @@ public class Window extends  JFrame implements ActionListener {
         result = new JLabel();
         question = new JLabel();
 
+        counterLabel = new JLabel("");
+        counterLabel.setHorizontalAlignment(JLabel.CENTER);
+
+        counterLabel.setText("00:00");
+		second =0;
+		minute =0;
+		normalTimer();
+		timer.start();
+
+
+        timeLabel.add(counterLabel);
+        timeLabel.setVisible(true);
+
+
+
         question.setText("Działanie do wykonania");
         question.setBounds(600,150,50,50);
 
         result.setText("Wynik: 0");
         result.setBounds(50,50,50,50);
 
-        timeLabel.setText("Czas: ");
+
         timeLabel.setBounds(800,60,50,50);
 
         przyciski = new JPanel();
@@ -90,14 +111,7 @@ public class Window extends  JFrame implements ActionListener {
         przyciski.add(hard);
         przyciski.add(exit);
 
-      /*
-        time = new JPanel();
-        time.setLayout(new GridLayout(1, 3));
-        time.add(timeLabel);
-        time.add(question);
-        time.add(result);
 
-       */
         JPanel topL = new JPanel();
         JPanel topS = new JPanel();
         JPanel topP = new JPanel();
@@ -132,6 +146,30 @@ public class Window extends  JFrame implements ActionListener {
 
 
     }
+   public void normalTimer() {
+
+      timer = new Timer(1000, new ActionListener() {
+
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            second++;
+            ddSecond = dFormat.format(second);
+            ddMinute = dFormat.format(minute);
+            counterLabel.setText(ddMinute + ":" + ddSecond);
+
+            if(second==60) {
+               second=0;
+               minute++;
+
+               ddSecond = dFormat.format(second);
+               ddMinute = dFormat.format(minute);
+               counterLabel.setText(ddMinute + ":" + ddSecond);
+            }
+         }
+      });
+   }
+
+
 
    @Override
    public void actionPerformed(ActionEvent ae)
@@ -139,6 +177,7 @@ public class Window extends  JFrame implements ActionListener {
       if(ae.getSource() == easy)
       {
          question.setText(liczenie.easy());
+
       }
       if(ae.getSource() == normal)
       {
