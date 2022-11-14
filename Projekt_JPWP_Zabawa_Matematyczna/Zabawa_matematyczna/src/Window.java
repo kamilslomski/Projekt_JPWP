@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
-
 public class Window extends  JFrame implements ActionListener {
    Body body = new Body();
    JPanel top;
@@ -19,8 +18,6 @@ public class Window extends  JFrame implements ActionListener {
    JLabel timeLabel;
    JLabel result;
    JLabel question;
-   JLabel counterLabel;
-   Font font1 = new Font("Arial", Font.PLAIN, 70);
    Timer timer;
    int second, minute;
    String ddSecond, ddMinute;
@@ -33,11 +30,9 @@ public class Window extends  JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         top = new JPanel();
-        //top.setFont(getFont().deriveFont(Font.BOLD, 20)); coś nie dziala - musze poczytać
         top.setPreferredSize(new Dimension(1280, 200));
         top.setLayout(new GridLayout(1, 3));
         top.setBackground(Color.LIGHT_GRAY);
-
 
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
@@ -71,24 +66,18 @@ public class Window extends  JFrame implements ActionListener {
         hard.addActionListener( this);
         hard.setText("HARD");
 
-
         JLabel answer_labelA = new JLabel();
         JLabel answer_labelB = new JLabel();
         JLabel answer_labelC = new JLabel();
         JLabel answer_labelD = new JLabel();
+
         timeLabel = new JLabel();
         result = new JLabel();
         question = new JLabel();
 
-
-       // counterLabel.setHorizontalAlignment(JLabel.CENTER);
-
         timeLabel.setText("00:00");
-
-
         timeLabel.setVisible(true);
-
-
+        timeLabel.setBounds(800,60,50,50);
 
         question.setText("Działanie do wykonania");
         question.setBounds(600,150,50,50);
@@ -96,16 +85,12 @@ public class Window extends  JFrame implements ActionListener {
         result.setText("Wynik: 0");
         result.setBounds(50,50,50,50);
 
-
-        //timeLabel.setBounds(800,60,50,50);
-
         przyciski = new JPanel();
         przyciski.setLayout(new GridLayout(1, 4));
         przyciski.add(easy);
         przyciski.add(normal);
         przyciski.add(hard);
         przyciski.add(exit);
-
 
         JPanel topL = new JPanel();
         JPanel topS = new JPanel();
@@ -121,7 +106,6 @@ public class Window extends  JFrame implements ActionListener {
         top.add(topS, BorderLayout.CENTER);
         top.add(topP, BorderLayout.EAST);
 
-
         answer = new JPanel();
         answer.setLayout(new GridLayout(2, 2));
         answer.add(answer_labelA);
@@ -129,17 +113,11 @@ public class Window extends  JFrame implements ActionListener {
         answer.add(answer_labelC);
         answer.add(answer_labelD);
 
-
-
         bottom.add(przyciski,BorderLayout.CENTER);
-
 
         add(top, BorderLayout.NORTH);
         add(panel, BorderLayout.CENTER);
         add(bottom, BorderLayout.SOUTH);
-
-
-
     }
    public void normalTimer() {
       second =0;
@@ -156,7 +134,6 @@ public class Window extends  JFrame implements ActionListener {
             if(second==60) {
                second=0;
                minute++;
-
                ddSecond = dFormat.format(second);
                ddMinute = dFormat.format(minute);
                timeLabel.setText(ddMinute + ":" + ddSecond);
@@ -164,8 +141,6 @@ public class Window extends  JFrame implements ActionListener {
          }
       });
    }
-
-
 
    @Override
    public void actionPerformed(ActionEvent ae)
@@ -182,14 +157,12 @@ public class Window extends  JFrame implements ActionListener {
          question.setText(liczenie.normal());
          normalTimer();
          timer.restart();
-
       }
       if(ae.getSource() == hard)
       {
          question.setText(liczenie.hard());
          normalTimer();
          timer.restart();
-
       }
       if(ae.getSource() == exit)
       {

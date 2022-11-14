@@ -5,6 +5,7 @@ public class liczenie {
 
     static int min;
     static int max;
+    int i=0;
 
     public static String easy() {
        String liczba;
@@ -43,10 +44,9 @@ public class liczenie {
 
         liczba=String.valueOf(pierwsza)+"*"+String.valueOf(druga)+"=";
         wynik=pierwsza*druga;
+
         return liczba;
     }
-
-
 
 
 }
