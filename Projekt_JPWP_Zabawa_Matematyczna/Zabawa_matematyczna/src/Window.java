@@ -80,17 +80,12 @@ public class Window extends  JFrame implements ActionListener {
         result = new JLabel();
         question = new JLabel();
 
-        counterLabel = new JLabel("");
-        counterLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        counterLabel.setText("00:00");
-		second =0;
-		minute =0;
-		normalTimer();
-		timer.start();
+       // counterLabel.setHorizontalAlignment(JLabel.CENTER);
+
+        timeLabel.setText("00:00");
 
 
-        timeLabel.add(counterLabel);
         timeLabel.setVisible(true);
 
 
@@ -102,7 +97,7 @@ public class Window extends  JFrame implements ActionListener {
         result.setBounds(50,50,50,50);
 
 
-        timeLabel.setBounds(800,60,50,50);
+        //timeLabel.setBounds(800,60,50,50);
 
         przyciski = new JPanel();
         przyciski.setLayout(new GridLayout(1, 4));
@@ -147,7 +142,8 @@ public class Window extends  JFrame implements ActionListener {
 
     }
    public void normalTimer() {
-
+      second =0;
+      minute =0;
       timer = new Timer(1000, new ActionListener() {
 
          @Override
@@ -155,7 +151,7 @@ public class Window extends  JFrame implements ActionListener {
             second++;
             ddSecond = dFormat.format(second);
             ddMinute = dFormat.format(minute);
-            counterLabel.setText(ddMinute + ":" + ddSecond);
+            timeLabel.setText(ddMinute + ":" + ddSecond);
 
             if(second==60) {
                second=0;
@@ -163,7 +159,7 @@ public class Window extends  JFrame implements ActionListener {
 
                ddSecond = dFormat.format(second);
                ddMinute = dFormat.format(minute);
-               counterLabel.setText(ddMinute + ":" + ddSecond);
+               timeLabel.setText(ddMinute + ":" + ddSecond);
             }
          }
       });
@@ -177,15 +173,23 @@ public class Window extends  JFrame implements ActionListener {
       if(ae.getSource() == easy)
       {
          question.setText(liczenie.easy());
+         normalTimer();
+         timer.restart();
 
       }
       if(ae.getSource() == normal)
       {
          question.setText(liczenie.normal());
+         normalTimer();
+         timer.restart();
+
       }
       if(ae.getSource() == hard)
       {
          question.setText(liczenie.hard());
+         normalTimer();
+         timer.restart();
+
       }
       if(ae.getSource() == exit)
       {
