@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#4 prawie dzialajacy timer">
+    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#5 timer i kwadraty (nie dziala)">
+      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Czas.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Ekran.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Panel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/lista_slow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" afterDir="false" />
@@ -77,7 +82,13 @@
       <workItem from="1667820596977" duration="1848000" />
       <workItem from="1668363731159" duration="7044000" />
       <workItem from="1668449904202" duration="9940000" />
-      <workItem from="1668462743338" duration="2091000" />
+      <workItem from="1668462743338" duration="2337000" />
+      <workItem from="1668962737344" duration="505000" />
+      <workItem from="1668963641908" duration="3502000" />
+      <workItem from="1668969478249" duration="2678000" />
+      <workItem from="1670000763860" duration="9000" />
+      <workItem from="1670102598177" duration="1923000" />
+      <workItem from="1670151664240" duration="2929000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1667811469049</created>
@@ -142,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668454087152</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="#5 timer i kwadraty (nie dziala)">
+      <created>1668464912147</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668464912147</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +195,7 @@
     <MESSAGE value="#2" />
     <MESSAGE value="#3" />
     <MESSAGE value="#4 prawie dzialajacy timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="#4 prawie dzialajacy timer" />
+    <MESSAGE value="#5 timer i kwadraty (nie dziala)" />
+    <option name="LAST_COMMIT_MESSAGE" value="#5 timer i kwadraty (nie dziala)" />
   </component>
 </project>

@@ -4,12 +4,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Body extends JPanel implements ActionListener, KeyListener {
     Timer timer = new Timer(15, this);
     int x, vx, y, vy = 0;
     int i=0;
+    JLabel firstFalse = new JLabel("");
+    JLabel secondFalse = new JLabel("");
+    JLabel correct = new JLabel("");
+
+    int randomX = 100, randomY = 100, randomXfalse1 = 100, randomYfalse1 = 100,randomXfalse2 = 100, randomYfalse2 = 100;
 
     Body()
     {
@@ -25,7 +31,6 @@ public class Body extends JPanel implements ActionListener, KeyListener {
 
     public void paintComponent(Graphics d)
     {
-
         super.paintComponent(d);
         d.setColor(Color.RED);
         d.fillRect(x,y,20,20);
@@ -75,14 +80,14 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     @Override
     public void keyPressed(KeyEvent e)
     {
-        int c = e.getKeyCode();
-        if(c == KeyEvent.VK_LEFT)
+        int a = e.getKeyCode();
+        if(a == KeyEvent.VK_LEFT)
         {vx=-5; vy=0;}
-        if(c == KeyEvent.VK_RIGHT)
+        if(a == KeyEvent.VK_RIGHT)
         { vx=5; vy=0; }
-        if(c == KeyEvent.VK_UP)
+        if(a == KeyEvent.VK_UP)
         { vy=-5; vx=0; }
-        if(c == KeyEvent.VK_DOWN)
+        if(a == KeyEvent.VK_DOWN)
         { vy=5; vx=0; }
     }
 
@@ -95,4 +100,93 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         if(c == KeyEvent.VK_UP) { vy=0; }
         if(c == KeyEvent.VK_DOWN) { vy=0; }
     }
+
+    public boolean falseResult1 (int x, int  y, int randXfalse, int randYfalse){
+        Rectangle label = new Rectangle(randomX, randomY, 50, 50);
+
+        Rectangle result = SwingUtilities.computeIntersection(x, y, 20, 20, label);
+
+        return (result.getWidth() > 0 && result.getHeight() > 0);
+    }
+
+    public boolean falseResult2 (int x, int  y, int randXfalse, int randYfalse){
+        Rectangle label = new Rectangle(randomX, randomY, 50, 50);
+
+        Rectangle result = SwingUtilities.computeIntersection(x, y, 20, 20, label);
+
+        return (result.getWidth() > 0 && result.getHeight() > 0);
+    }
+
+    public boolean correctResult (int x, int  y, int randXfalse, int randYfalse){
+        Rectangle label = new Rectangle(randomX, randomY, 50, 50);
+
+        Rectangle result = SwingUtilities.computeIntersection(x, y, 20, 20, label);
+
+        return (result.getWidth() > 0 && result.getHeight() > 0);
+    }
+
+    public int randomX(){
+        int x;
+        Random rand = new Random();
+        x = rand.nextInt(1150)+50;
+        randomX = x;
+        return x;
+    }
+
+    public int randomY(){
+        int y;
+        Random rand = new Random();
+        y = rand.nextInt(600)+50;
+        randomY = y;
+        return y;
+    }
+
+    public int randomXfalse1(){
+        int x;
+        Random rand = new Random();
+        x = rand.nextInt(1150)+50;
+        randomXfalse1 = x;
+        return x;
+    }
+
+    public int randomYfalse1(){
+        int x;
+        Random rand = new Random();
+        x = rand.nextInt(600)+50;
+        randomYfalse1 = x;
+        return x;
+    }
+    public int randomXfalse2(){
+        int x;
+        Random rand = new Random();
+        x = rand.nextInt(1150)+50;
+        randomXfalse2 = x;
+        return x;
+    }
+
+    public int randomYfalse2(){
+        int x;
+        Random rand = new Random();
+        x = rand.nextInt(600)+50;
+        randomYfalse2 = x;
+        return x;
+    }
+
+    public void losowanie(int tmp, String tmp2,String tmp3){
+        firstFalse.setText(tmp2);
+        firstFalse.setLocation(this.randomXfalse1(),randomYfalse1());
+        firstFalse.setSize(50,50);
+        firstFalse.setFont(new Font("Arial", Font.PLAIN, 50));
+
+        secondFalse.setText(tmp3); //tu bedzie losowanie zlejv2
+        secondFalse.setLocation(this.randomXfalse2(),randomYfalse2());
+        secondFalse.setSize(50,50);
+        secondFalse.setFont(new Font("Arial", Font.PLAIN, 50));
+
+        correct.setText(String.valueOf(tmp));
+        correct.setLocation(this.randomX(),randomY());
+        correct.setSize(50,50);
+        correct.setFont(new Font("Arial", Font.PLAIN, 50));
+    }
+
 }

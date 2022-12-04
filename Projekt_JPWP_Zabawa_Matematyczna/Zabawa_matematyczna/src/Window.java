@@ -8,7 +8,7 @@ public class Window extends  JFrame implements ActionListener {
    Body body = new Body();
    JPanel top;
     JPanel panel;
-    JPanel przyciski;
+    JPanel buttons;
     JPanel bottom;
     JPanel answer;
    JButton exit;
@@ -21,6 +21,7 @@ public class Window extends  JFrame implements ActionListener {
    Timer timer;
    int second, minute;
    String ddSecond, ddMinute;
+   Body bd;
    DecimalFormat dFormat = new DecimalFormat("00");
 
      Window(String nazwa) {
@@ -85,12 +86,12 @@ public class Window extends  JFrame implements ActionListener {
         result.setText("Wynik: 0");
         result.setBounds(50,50,50,50);
 
-        przyciski = new JPanel();
-        przyciski.setLayout(new GridLayout(1, 4));
-        przyciski.add(easy);
-        przyciski.add(normal);
-        przyciski.add(hard);
-        przyciski.add(exit);
+        buttons = new JPanel();
+        buttons.setLayout(new GridLayout(1, 4));
+        buttons.add(easy);
+        buttons.add(normal);
+        buttons.add(hard);
+        buttons.add(exit);
 
         JPanel topL = new JPanel();
         JPanel topS = new JPanel();
@@ -113,7 +114,7 @@ public class Window extends  JFrame implements ActionListener {
         answer.add(answer_labelC);
         answer.add(answer_labelD);
 
-        bottom.add(przyciski,BorderLayout.CENTER);
+        bottom.add(buttons,BorderLayout.CENTER);
 
         add(top, BorderLayout.NORTH);
         add(panel, BorderLayout.CENTER);
@@ -122,6 +123,7 @@ public class Window extends  JFrame implements ActionListener {
    public void normalTimer() {
       second =0;
       minute =0;
+      if ( timer != null && timer.isRunning() ) return;
       timer = new Timer(1000, new ActionListener() {
 
          @Override
@@ -147,9 +149,11 @@ public class Window extends  JFrame implements ActionListener {
    {
       if(ae.getSource() == easy)
       {
-         question.setText(liczenie.easy());
+         String tmp = liczenie.easy();
+         question.setText(tmp);
          normalTimer();
          timer.restart();
+         bd.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
 
       }
       if(ae.getSource() == normal)
@@ -157,12 +161,14 @@ public class Window extends  JFrame implements ActionListener {
          question.setText(liczenie.normal());
          normalTimer();
          timer.restart();
+         bd.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
       }
       if(ae.getSource() == hard)
       {
          question.setText(liczenie.hard());
          normalTimer();
          timer.restart();
+         bd.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
       }
       if(ae.getSource() == exit)
       {
