@@ -187,6 +187,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         correct.setLocation(this.randomX(),randomY());
         correct.setSize(50,50);
         correct.setFont(new Font("Arial", Font.PLAIN, 50));
+
     }
 
 }

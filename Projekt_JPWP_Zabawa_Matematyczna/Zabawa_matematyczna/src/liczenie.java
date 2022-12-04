@@ -142,7 +142,6 @@ public class liczenie {
         String number = String.valueOf(result);
         return number;
     }
-
     public static String falseResult_h2(){
         max=100;
         min=1;
