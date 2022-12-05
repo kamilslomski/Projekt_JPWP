@@ -25,8 +25,9 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-
-
+        this.add(firstFalse);
+        this.add(secondFalse);
+        this.add(correct);
     }
 
     public void paintComponent(Graphics d)
@@ -128,7 +129,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomX(){
         int x;
         Random rand = new Random();
-        x = rand.nextInt(1150)+50;
+        x = rand.nextInt(1100)+50;
         randomX = x;
         return x;
     }
@@ -136,7 +137,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomY(){
         int y;
         Random rand = new Random();
-        y = rand.nextInt(600)+50;
+        y = rand.nextInt(400)+50;
         randomY = y;
         return y;
     }
@@ -144,7 +145,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomXfalse1(){
         int x;
         Random rand = new Random();
-        x = rand.nextInt(1150)+50;
+        x = rand.nextInt(1100)+50;
         randomXfalse1 = x;
         return x;
     }
@@ -152,14 +153,14 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomYfalse1(){
         int x;
         Random rand = new Random();
-        x = rand.nextInt(600)+50;
+        x = rand.nextInt(400)+50;
         randomYfalse1 = x;
         return x;
     }
     public int randomXfalse2(){
         int x;
         Random rand = new Random();
-        x = rand.nextInt(1150)+50;
+        x = rand.nextInt(1100)+50;
         randomXfalse2 = x;
         return x;
     }
@@ -167,7 +168,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomYfalse2(){
         int x;
         Random rand = new Random();
-        x = rand.nextInt(600)+50;
+        x = rand.nextInt(400)+50;
         randomYfalse2 = x;
         return x;
     }
@@ -176,18 +177,17 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         firstFalse.setText(tmp2);
         firstFalse.setLocation(this.randomXfalse1(),randomYfalse1());
         firstFalse.setSize(50,50);
-        firstFalse.setFont(new Font("Arial", Font.PLAIN, 50));
+        firstFalse.setFont(new Font("Arial", Font.ITALIC, 20));
 
         secondFalse.setText(tmp3); //tu bedzie losowanie zlejv2
         secondFalse.setLocation(this.randomXfalse2(),randomYfalse2());
         secondFalse.setSize(50,50);
-        secondFalse.setFont(new Font("Arial", Font.PLAIN, 50));
+        secondFalse.setFont(new Font("Arial", Font.ITALIC, 20));
 
         correct.setText(String.valueOf(tmp));
         correct.setLocation(this.randomX(),randomY());
         correct.setSize(50,50);
-        correct.setFont(new Font("Arial", Font.PLAIN, 50));
-
+        correct.setFont(new Font("Arial", Font.ITALIC, 20));
     }
 
 }

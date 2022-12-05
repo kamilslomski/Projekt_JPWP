@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#5 timer i kwadraty (nie dziala)">
-      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Czas.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Ekran.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/Panel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Projekt Filipa/Filip/out/production/Filip/lista_slow.class" afterDir="false" />
+    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#6 losowanie złej liczby i dalsza próba kwadratów">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/liczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/liczenie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +83,11 @@
       <workItem from="1668969478249" duration="2678000" />
       <workItem from="1670000763860" duration="9000" />
       <workItem from="1670102598177" duration="1923000" />
-      <workItem from="1670151664240" duration="2929000" />
+      <workItem from="1670151664240" duration="3584000" />
+      <workItem from="1670243344187" duration="823000" />
+      <workItem from="1670264781769" duration="224000" />
+      <workItem from="1670267959330" duration="206000" />
+      <workItem from="1670277341777" duration="940000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1667811469049</created>
@@ -160,7 +159,28 @@
       <option name="project" value="LOCAL" />
       <updated>1668464912147</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="#6 losowanie złej liczby i dalsza próba kwadratów">
+      <created>1670155361313</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670155361313</updated>
+    </task>
+    <task id="LOCAL-00012" summary="#6 losowanie złej liczby i dalsza próba kwadratów">
+      <created>1670155489564</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670155489564</updated>
+    </task>
+    <task id="LOCAL-00013" summary="#6 losowanie złej liczby i dalsza próba kwadratów">
+      <created>1670155619462</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670155619462</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +216,7 @@
     <MESSAGE value="#3" />
     <MESSAGE value="#4 prawie dzialajacy timer" />
     <MESSAGE value="#5 timer i kwadraty (nie dziala)" />
-    <option name="LAST_COMMIT_MESSAGE" value="#5 timer i kwadraty (nie dziala)" />
+    <MESSAGE value="#6 losowanie złej liczby i dalsza próba kwadratów" />
+    <option name="LAST_COMMIT_MESSAGE" value="#6 losowanie złej liczby i dalsza próba kwadratów" />
   </component>
 </project>

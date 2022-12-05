@@ -21,11 +21,11 @@ public class Window extends  JFrame implements ActionListener {
    Timer timer;
    int second, minute;
    String ddSecond, ddMinute;
-   Body bd;
    DecimalFormat dFormat = new DecimalFormat("00");
 
      Window(String nazwa) {
         super(nazwa);
+
 
         setSize(1280, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -148,11 +148,11 @@ public class Window extends  JFrame implements ActionListener {
    {
       if(ae.getSource() == easy)
       {
-         String tmp = liczenie.easy();
-         question.setText(tmp);
+         question.setText(liczenie.easy());
          normalTimer();
          timer.restart();
-         bd.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
+         body.setLayout(null);
+         body.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
 
       }
       if(ae.getSource() == normal)
@@ -160,14 +160,14 @@ public class Window extends  JFrame implements ActionListener {
          question.setText(liczenie.normal());
          normalTimer();
          timer.restart();
-         bd.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
+         body.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
       }
       if(ae.getSource() == hard)
       {
          question.setText(liczenie.hard());
          normalTimer();
          timer.restart();
-         bd.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
+         body.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
       }
       if(ae.getSource() == exit)
       {
