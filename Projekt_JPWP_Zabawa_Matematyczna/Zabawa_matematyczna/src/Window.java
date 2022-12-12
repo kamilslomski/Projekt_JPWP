@@ -22,10 +22,10 @@ public class Window extends  JFrame implements ActionListener {
    int second, minute;
    String ddSecond, ddMinute;
    DecimalFormat dFormat = new DecimalFormat("00");
+   Image img = Toolkit.getDefaultToolkit().createImage("background.png");
 
      Window(String nazwa) {
         super(nazwa);
-
 
         setSize(1280, 1024);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -143,6 +143,11 @@ public class Window extends  JFrame implements ActionListener {
          }
       });
    }
+
+//   public void paint(Graphics g)
+//   {
+//      g.drawImage(img, 0, 280, null);
+//   }
    @Override
    public void actionPerformed(ActionEvent ae)
    {

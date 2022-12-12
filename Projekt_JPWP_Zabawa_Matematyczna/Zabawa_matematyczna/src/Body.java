@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Body extends JPanel implements ActionListener, KeyListener {
     Timer timer = new Timer(15, this);
@@ -14,9 +13,8 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     JLabel firstFalse = new JLabel("");
     JLabel secondFalse = new JLabel("");
     JLabel correct = new JLabel("");
-
     int randomX = 100, randomY = 100, randomXfalse1 = 100, randomYfalse1 = 100,randomXfalse2 = 100, randomYfalse2 = 100;
-
+    Image img = Toolkit.getDefaultToolkit().createImage("bohater.png");
     Body()
     {
         setBackground(Color.WHITE);
@@ -33,20 +31,29 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public void paintComponent(Graphics d)
     {
         super.paintComponent(d);
-        d.setColor(Color.RED);
-        d.fillRect(x,y,20,20);
-        while(i<5) {
-            d.setColor(Color.BLUE);
-            int x1 = ThreadLocalRandom.current().nextInt(10, 1150);
-            int y1 = ThreadLocalRandom.current().nextInt(20, 800);
-            for(int j=1;j<20; j++) d.drawRect(x1, y1, 20-j, 20-j);
-            i++;
-        }
+        d.drawImage(img, x, y,null);
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        if (correctResult(x, y, randomX, randomY)) {
+            System.out.println("good intersection");
+            JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);
+        }
+        if (falseResult1(x, y, randomXfalse1, randomYfalse1)) {
+            System.out.println("bad intersection");
+            JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);
+        }
+        if (falseResult2(x, y, randomXfalse2, randomYfalse2)) {
+            System.out.println("bad intersection");
+            JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);
+        }
+
+
         if(x<0)
         {
             x=0;
@@ -72,6 +79,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         y = y+vy;
         repaint();
     }
+
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -102,23 +110,23 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         if(c == KeyEvent.VK_DOWN) { vy=0; }
     }
 
-    public boolean falseResult1 (int x, int  y, int randXfalse, int randYfalse){
-        Rectangle label = new Rectangle(randomX, randomY, 50, 50);
+    public boolean falseResult1 (int x, int  y, int randomXfalse1, int randomYfalse1){
+        Rectangle label = new Rectangle(randomXfalse1, randomYfalse1, 50, 50);
 
         Rectangle result = SwingUtilities.computeIntersection(x, y, 20, 20, label);
 
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
-    public boolean falseResult2 (int x, int  y, int randXfalse, int randYfalse){
-        Rectangle label = new Rectangle(randomX, randomY, 50, 50);
+    public boolean falseResult2 (int x, int  y, int randomXfalse2, int randomYfalse2){
+        Rectangle label = new Rectangle(randomXfalse2, randomYfalse2, 50, 50);
 
         Rectangle result = SwingUtilities.computeIntersection(x, y, 20, 20, label);
 
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
-    public boolean correctResult (int x, int  y, int randXfalse, int randYfalse){
+    public boolean correctResult (int x, int  y, int randomX, int randomY){
         Rectangle label = new Rectangle(randomX, randomY, 50, 50);
 
         Rectangle result = SwingUtilities.computeIntersection(x, y, 20, 20, label);
@@ -173,18 +181,18 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
-    public void losowanie(int tmp, String tmp2,String tmp3){
-        firstFalse.setText(tmp2);
+    public void losowanie(int temp, String temp2,String temp3){
+        firstFalse.setText(temp2);
         firstFalse.setLocation(this.randomXfalse1(),randomYfalse1());
         firstFalse.setSize(50,50);
         firstFalse.setFont(new Font("Arial", Font.ITALIC, 20));
 
-        secondFalse.setText(tmp3); //tu bedzie losowanie zlejv2
+        secondFalse.setText(temp3);
         secondFalse.setLocation(this.randomXfalse2(),randomYfalse2());
         secondFalse.setSize(50,50);
         secondFalse.setFont(new Font("Arial", Font.ITALIC, 20));
 
-        correct.setText(String.valueOf(tmp));
+        correct.setText(String.valueOf(temp));
         correct.setLocation(this.randomX(),randomY());
         correct.setSize(50,50);
         correct.setFont(new Font("Arial", Font.ITALIC, 20));
