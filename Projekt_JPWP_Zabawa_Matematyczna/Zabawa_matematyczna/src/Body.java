@@ -8,13 +8,13 @@ import java.util.Random;
 
 public class Body extends JPanel implements ActionListener, KeyListener {
     Timer timer = new Timer(15, this);
-    int x, vx, y, vy = 0;
-    int i=0;
+    int x, vx, y, vy = 0, score=-1;
     JLabel firstFalse = new JLabel("");
     JLabel secondFalse = new JLabel("");
     JLabel correct = new JLabel("");
     int randomX = 100, randomY = 100, randomXfalse1 = 100, randomYfalse1 = 100,randomXfalse2 = 100, randomYfalse2 = 100;
     Image img = Toolkit.getDefaultToolkit().createImage("bohater.png");
+    Image img2 = Toolkit.getDefaultToolkit().createImage("background.png");
     Body()
     {
         setBackground(Color.WHITE);
@@ -28,11 +28,17 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         this.add(correct);
     }
 
+//    public void paint(Graphics g)
+//    {
+//        g.drawImage(img2, 0, 0, null);
+//    }
     public void paintComponent(Graphics d)
     {
         super.paintComponent(d);
         d.drawImage(img, x, y,null);
     }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e)
@@ -40,6 +46,8 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         if (correctResult(x, y, randomX, randomY)) {
             System.out.println("good intersection");
             JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
+            someoneScored();
+
             System.exit(0);
         }
         if (falseResult1(x, y, randomXfalse1, randomYfalse1)) {
@@ -85,7 +93,10 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public void keyTyped(KeyEvent e) {
 
     }
-
+    public int someoneScored(){
+        score++;
+        return score;
+    }
     @Override
     public void keyPressed(KeyEvent e)
     {
@@ -145,7 +156,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomY(){
         int y;
         Random rand = new Random();
-        y = rand.nextInt(400)+50;
+        y = rand.nextInt(500)+50;
         randomY = y;
         return y;
     }
@@ -161,7 +172,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomYfalse1(){
         int x;
         Random rand = new Random();
-        x = rand.nextInt(400)+50;
+        x = rand.nextInt(500)+50;
         randomYfalse1 = x;
         return x;
     }
@@ -176,7 +187,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     public int randomYfalse2(){
         int x;
         Random rand = new Random();
-        x = rand.nextInt(400)+50;
+        x = rand.nextInt(500)+50;
         randomYfalse2 = x;
         return x;
     }

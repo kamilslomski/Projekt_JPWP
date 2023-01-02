@@ -19,7 +19,7 @@ public class Window extends  JFrame implements ActionListener {
    JLabel result;
    JLabel question;
    Timer timer;
-   int second, minute;
+   int second, minute,temp;
    String ddSecond, ddMinute;
    DecimalFormat dFormat = new DecimalFormat("00");
    Image img = Toolkit.getDefaultToolkit().createImage("background.png");
@@ -31,7 +31,7 @@ public class Window extends  JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         top = new JPanel();
-        top.setPreferredSize(new Dimension(1280, 200));
+        top.setPreferredSize(new Dimension(1280, 80));
         top.setLayout(new GridLayout(1, 3));
         top.setBackground(Color.LIGHT_GRAY);
 
@@ -41,7 +41,7 @@ public class Window extends  JFrame implements ActionListener {
 
         bottom = new JPanel();
         bottom.setLayout(new BorderLayout());
-        bottom.setPreferredSize(new Dimension(1280, 80));
+        bottom.setPreferredSize(new Dimension(1280, 60));
 
         JTextField textField = new JTextField();
         textField.setHorizontalAlignment(SwingConstants.CENTER);
@@ -83,7 +83,7 @@ public class Window extends  JFrame implements ActionListener {
         question.setText("Działanie do wykonania");
         question.setBounds(600,150,50,50);
 
-        result.setText("Wynik: 0");
+        result.setText("Wynik: " + body.someoneScored());
         result.setBounds(50,50,50,50);
 
         buttons = new JPanel();
@@ -144,10 +144,7 @@ public class Window extends  JFrame implements ActionListener {
       });
    }
 
-//   public void paint(Graphics g)
-//   {
-//      g.drawImage(img, 0, 280, null);
-//   }
+
    @Override
    public void actionPerformed(ActionEvent ae)
    {

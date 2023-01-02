@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#7 działa losowanie i wyświetlanie cyfr">
-      <change afterPath="$PROJECT_DIR$/Bohater.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bohater_oryg.png" afterDir="false" />
+    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#8 dodanie bohatera, czekamy na tlo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bohater.png" beforeDir="false" afterPath="$PROJECT_DIR$/Bohater.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/liczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/liczenie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +95,12 @@
       <workItem from="1670772466134" duration="887000" />
       <workItem from="1670839321900" duration="939000" />
       <workItem from="1670840501163" duration="55000" />
-      <workItem from="1670843314489" duration="737000" />
+      <workItem from="1670843314489" duration="1470000" />
+      <workItem from="1670845026441" duration="27000" />
+      <workItem from="1670845118977" duration="608000" />
+      <workItem from="1670875178615" duration="423000" />
+      <workItem from="1672677130662" duration="728000" />
+      <workItem from="1672677886202" duration="4679000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1667811469049</created>
@@ -198,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670278343614</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="#8 dodanie bohatera, czekamy na tlo">
+      <created>1670844092167</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670844092167</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +245,7 @@
     <MESSAGE value="#5 timer i kwadraty (nie dziala)" />
     <MESSAGE value="#6 losowanie złej liczby i dalsza próba kwadratów" />
     <MESSAGE value="#7 działa losowanie i wyświetlanie cyfr" />
-    <option name="LAST_COMMIT_MESSAGE" value="#7 działa losowanie i wyświetlanie cyfr" />
+    <MESSAGE value="#8 dodanie bohatera, czekamy na tlo" />
+    <option name="LAST_COMMIT_MESSAGE" value="#8 dodanie bohatera, czekamy na tlo" />
   </component>
 </project>
