@@ -26,6 +26,50 @@ public class Window extends JFrame implements ActionListener {
    DecimalFormat dFormat = new DecimalFormat("00");
    Image img = Toolkit.getDefaultToolkit().createImage("background.png");
 
+   @Override
+   public void actionPerformed(ActionEvent ae)
+   {
+      if(ae.getSource() == easy)
+      {
+         level = 1;
+         question.setText(liczenie.easy());
+         normalTimer();
+         timer.restart();
+         body.setLayout(null);
+         body.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
+
+      }
+      if(ae.getSource() == normal)
+      {
+         level = 2;
+         question.setText(liczenie.normal());
+         normalTimer();
+         timer.restart();
+         body.setLayout(null);
+         body.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
+      }
+      if(ae.getSource() == hard)
+      {
+         level = 3;
+         question.setText(liczenie.hard());
+         normalTimer();
+         timer.restart();
+         body.setLayout(null);
+         body.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
+      }
+      if(ae.getSource() == exit)
+      {
+         System.exit(0);
+      }
+   }
+
+   public void setScore(int score){
+      result.setText("Wynik: " + score);
+   }
+   public void setQuestion(String ques){
+      question.setText(ques);
+   }
+
      Window(String nazwa) {
         super(nazwa);
 
@@ -144,50 +188,5 @@ public class Window extends JFrame implements ActionListener {
             }
          }
       });
-   }
-
-
-   @Override
-   public void actionPerformed(ActionEvent ae)
-   {
-      if(ae.getSource() == easy)
-      {
-         level = 1;
-         question.setText(liczenie.easy());
-         normalTimer();
-         timer.restart();
-         body.setLayout(null);
-         body.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
-
-      }
-      if(ae.getSource() == normal)
-      {
-         level = 2;
-         question.setText(liczenie.normal());
-         normalTimer();
-         timer.restart();
-         body.setLayout(null);
-         body.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
-      }
-      if(ae.getSource() == hard)
-      {
-         level = 3;
-         question.setText(liczenie.hard());
-         normalTimer();
-         timer.restart();
-         body.setLayout(null);
-         body.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
-      }
-      if(ae.getSource() == exit)
-      {
-         System.exit(0);
-      }
-   }
-
-   public void setScore(int score){
-      result.setText("Wynik: " + score);
-   }
-   public void setQuestion(String ques){
-      question.setText(ques);
    }
 }

@@ -9,7 +9,7 @@ import java.util.Random;
 public class Body extends JPanel implements ActionListener, KeyListener {
 
     Timer timer = new Timer(15, this);
-    int x, vx, y, vy = 0, score=-1;
+    int x, vx, y, vy = 0, score=0;
     JLabel firstFalse = new JLabel("");
     JLabel secondFalse = new JLabel("");
     JLabel correct = new JLabel("");
@@ -36,8 +36,6 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         d.drawImage(img2, 0, 0, null);
         d.drawImage(img, x, y,null);
     }
-
-
 
     @Override
     public void actionPerformed(ActionEvent e)
@@ -94,22 +92,20 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         Window window = new Window("Zabawa Matematyczna");
         window.setScore(score);
         setLayout(null);
-        if (window.level == 1){
-            window.setQuestion(liczenie.easy());
-            losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
-        }
-        else if (window.level == 2){
-            window.setQuestion(liczenie.normal());
-            losowanie(liczenie.result_n(),liczenie.falseResult_n1(),liczenie.falseResult_n2());
-        }
-        else if (window.level == 3){
-            window.setQuestion(liczenie.hard());
-            losowanie(liczenie.result_h(),liczenie.falseResult_h1(),liczenie.falseResult_h2());
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Niestety, coś kurwa nie działa!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
-            System.exit(0);
-        }
+            if (window.level == 1) {
+                window.setQuestion(liczenie.easy());
+                losowanie(liczenie.result_e(), liczenie.falseResult_e1(), liczenie.falseResult_e2());
+            } else if (window.level == 2) {
+                window.setQuestion(liczenie.normal());
+                losowanie(liczenie.result_n(), liczenie.falseResult_n1(), liczenie.falseResult_n2());
+            } else if (window.level == 3) {
+                window.setQuestion(liczenie.hard());
+                losowanie(liczenie.result_h(), liczenie.falseResult_h1(), liczenie.falseResult_h2());
+            } else {
+                JOptionPane.showMessageDialog(null, "Niestety, coś kurwa nie działa!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0);
+            }
+      //  JOptionPane.showMessageDialog(null, "Koniec gry", "Koniec", JOptionPane.INFORMATION_MESSAGE);
     }
     @Override
     public void keyPressed(KeyEvent e)
