@@ -148,14 +148,15 @@ public class Window extends  JFrame implements ActionListener {
    @Override
    public void actionPerformed(ActionEvent ae)
    {
-      if(ae.getSource() == easy)
-      {
+      for(int i=1; i<5; i++){
+      if(ae.getSource() == easy) {
+
          question.setText(liczenie.easy());
          normalTimer();
          timer.restart();
          body.setLayout(null);
-         body.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
-
+         body.losowanie(liczenie.result_e(), liczenie.falseResult_e1(), liczenie.falseResult_e2());
+      }
       }
       if(ae.getSource() == normal)
       {

@@ -45,10 +45,8 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     {
         if (correctResult(x, y, randomX, randomY)) {
             System.out.println("good intersection");
-            JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
+//            JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
             someoneScored();
-
-            System.exit(0);
         }
         if (falseResult1(x, y, randomXfalse1, randomYfalse1)) {
             System.out.println("bad intersection");
