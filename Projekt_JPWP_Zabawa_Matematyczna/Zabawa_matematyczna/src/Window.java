@@ -5,12 +5,15 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
 public class Window extends JFrame implements ActionListener {
+
+   //utworzenie zmiennych, etykiet, paneli, przycisków
+
    Body body = new Body();
    JPanel top;
-    JPanel panel;
-    JPanel buttons;
-    JPanel bottom;
-    JPanel answer;
+   JPanel panel;
+   JPanel buttons;
+   JPanel bottom;
+   JPanel answer;
    JButton exit;
    JButton easy;
    JButton normal;
@@ -21,11 +24,137 @@ public class Window extends JFrame implements ActionListener {
    Timer timer;
    int second, minute,temp;
    String ddSecond, ddMinute;
-
    public int level=1;
    DecimalFormat dFormat = new DecimalFormat("00");
-   Image img = Toolkit.getDefaultToolkit().createImage("background.png");
 
+   Window(String nazwa) {
+        super(nazwa);
+
+        //parametry JFrame'a
+        setSize(1280, 1024);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //ustawienia związane z górnym panelem (czasem, wynikiem oraz działaniem do wykonania)
+        timeLabel = new JLabel();
+        result = new JLabel();
+        question = new JLabel();
+
+        timeLabel.setText("00:00");
+        timeLabel.setVisible(true);
+        timeLabel.setBounds(800,60,50,50);
+
+        question.setText("Działanie do wykonania");
+        question.setBounds(600,150,50,50);
+
+        result.setText("Wynik: 0");
+        result.setBounds(50,50,50,50);
+
+        top = new JPanel();
+        top.setPreferredSize(new Dimension(1280, 80));
+        top.setLayout(new GridLayout(1, 3));
+        top.setBackground(Color.LIGHT_GRAY);
+
+        JPanel topL = new JPanel();
+        JPanel topS = new JPanel();
+        JPanel topP = new JPanel();
+
+        topL.setLayout(new GridBagLayout());
+        topP.setLayout(new GridBagLayout());
+        topP.add(result);
+        topL.add(timeLabel);
+        topS.add(question);
+
+        top.add(topL, BorderLayout.WEST);
+        top.add(topS, BorderLayout.CENTER);
+        top.add(topP, BorderLayout.EAST);
+
+        //ustawienia związane z częścią gdzie jest rozgrywana gra
+        panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        panel.add(body);
+
+        //ustawienia związane z menu graficznym w dolnej części ekrany
+        bottom = new JPanel();
+        bottom.setLayout(new BorderLayout());
+        bottom.setPreferredSize(new Dimension(1280, 60));
+
+        JTextField textField = new JTextField();
+        textField.setHorizontalAlignment(SwingConstants.CENTER);
+
+        exit = new JButton();
+        easy = new JButton();
+        normal = new JButton();
+        hard = new JButton();
+
+        exit.setFocusable(false);
+        exit.addActionListener(this);
+        exit.setText("EXIT");
+
+        easy.setFocusable(false);
+        easy.addActionListener(this);
+        easy.setText("EASY");
+
+        normal.setFocusable(false);
+        normal.addActionListener(this);
+        normal.setText("NORMAL");
+
+        hard.setFocusable(false);
+        hard.addActionListener( this);
+        hard.setText("HARD");
+
+        JLabel answer_labelA = new JLabel();
+        JLabel answer_labelB = new JLabel();
+        JLabel answer_labelC = new JLabel();
+        JLabel answer_labelD = new JLabel();
+
+        buttons = new JPanel();
+        buttons.setLayout(new GridLayout(1, 4));
+        buttons.add(easy);
+        buttons.add(normal);
+        buttons.add(hard);
+        buttons.add(exit);
+
+        answer = new JPanel();
+        answer.setLayout(new GridLayout(2, 2));
+        answer.add(answer_labelA);
+        answer.add(answer_labelB);
+        answer.add(answer_labelC);
+        answer.add(answer_labelD);
+
+        bottom.add(buttons,BorderLayout.CENTER);
+
+        //dodanie paneli do JFrame'a
+        add(top, BorderLayout.NORTH);
+        add(panel, BorderLayout.CENTER);
+        add(bottom, BorderLayout.SOUTH);
+    }
+
+    //ustawienia dotyczące timera
+   public void normalTimer() {
+      second =0;
+      minute =0;
+      if ( timer != null && timer.isRunning() ) return;
+      timer = new Timer(1000, new ActionListener() {
+
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            second++;
+            ddSecond = dFormat.format(second);
+            ddMinute = dFormat.format(minute);
+            timeLabel.setText(ddMinute + ":" + ddSecond);
+
+            if(second==60) {
+               second=0;
+               minute++;
+               ddSecond = dFormat.format(second);
+               ddMinute = dFormat.format(minute);
+               timeLabel.setText(ddMinute + ":" + ddSecond);
+            }
+         }
+      });
+   }
+
+   //sprawdzenie który poziom trudności został wybrany oraz wykonania odpowiednich zadań z tym związanych
    @Override
    public void actionPerformed(ActionEvent ae)
    {
@@ -68,125 +197,5 @@ public class Window extends JFrame implements ActionListener {
    }
    public void setQuestion(String ques){
       question.setText(ques);
-   }
-
-     Window(String nazwa) {
-        super(nazwa);
-
-        setSize(1280, 1024);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        top = new JPanel();
-        top.setPreferredSize(new Dimension(1280, 80));
-        top.setLayout(new GridLayout(1, 3));
-        top.setBackground(Color.LIGHT_GRAY);
-
-        panel = new JPanel();
-        panel.setLayout(new BorderLayout());
-        panel.add(body);
-
-        bottom = new JPanel();
-        bottom.setLayout(new BorderLayout());
-        bottom.setPreferredSize(new Dimension(1280, 60));
-
-        JTextField textField = new JTextField();
-        textField.setHorizontalAlignment(SwingConstants.CENTER);
-
-        exit = new JButton();
-        easy = new JButton();
-        normal = new JButton();
-        hard = new JButton();
-
-        exit.setFocusable(false);
-        exit.addActionListener(this);
-        exit.setText("EXIT");
-
-        easy.setFocusable(false);
-        easy.addActionListener(this);
-        easy.setText("EASY");
-
-        normal.setFocusable(false);
-        normal.addActionListener(this);
-        normal.setText("NORMAL");
-
-        hard.setFocusable(false);
-        hard.addActionListener( this);
-        hard.setText("HARD");
-
-        JLabel answer_labelA = new JLabel();
-        JLabel answer_labelB = new JLabel();
-        JLabel answer_labelC = new JLabel();
-        JLabel answer_labelD = new JLabel();
-
-        timeLabel = new JLabel();
-        result = new JLabel();
-        question = new JLabel();
-
-        timeLabel.setText("00:00");
-        timeLabel.setVisible(true);
-        timeLabel.setBounds(800,60,50,50);
-
-        question.setText("Działanie do wykonania");
-        question.setBounds(600,150,50,50);
-
-        result.setText("Wynik: 0");
-        result.setBounds(50,50,50,50);
-
-        buttons = new JPanel();
-        buttons.setLayout(new GridLayout(1, 4));
-        buttons.add(easy);
-        buttons.add(normal);
-        buttons.add(hard);
-        buttons.add(exit);
-
-        JPanel topL = new JPanel();
-        JPanel topS = new JPanel();
-        JPanel topP = new JPanel();
-
-        topL.setLayout(new GridBagLayout());
-        topP.setLayout(new GridBagLayout());
-        topP.add(result);
-        topL.add(timeLabel);
-        topS.add(question);
-
-        top.add(topL, BorderLayout.WEST);
-        top.add(topS, BorderLayout.CENTER);
-        top.add(topP, BorderLayout.EAST);
-
-        answer = new JPanel();
-        answer.setLayout(new GridLayout(2, 2));
-        answer.add(answer_labelA);
-        answer.add(answer_labelB);
-        answer.add(answer_labelC);
-        answer.add(answer_labelD);
-
-        bottom.add(buttons,BorderLayout.CENTER);
-
-        add(top, BorderLayout.NORTH);
-        add(panel, BorderLayout.CENTER);
-        add(bottom, BorderLayout.SOUTH);
-    }
-   public void normalTimer() {
-      second =0;
-      minute =0;
-      if ( timer != null && timer.isRunning() ) return;
-      timer = new Timer(1000, new ActionListener() {
-
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            second++;
-            ddSecond = dFormat.format(second);
-            ddMinute = dFormat.format(minute);
-            timeLabel.setText(ddMinute + ":" + ddSecond);
-
-            if(second==60) {
-               second=0;
-               minute++;
-               ddSecond = dFormat.format(second);
-               ddMinute = dFormat.format(minute);
-               timeLabel.setText(ddMinute + ":" + ddSecond);
-            }
-         }
-      });
    }
 }

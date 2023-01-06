@@ -7,7 +7,6 @@ import java.awt.event.KeyListener;
 import java.util.Random;
 
 public class Body extends JPanel implements ActionListener, KeyListener {
-
     Timer timer = new Timer(15, this);
     int x, vx, y, vy = 0, score=0;
     JLabel firstFalse = new JLabel("");
@@ -17,6 +16,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     Image img = Toolkit.getDefaultToolkit().createImage("bohater.png");
     Image img2 = Toolkit.getDefaultToolkit().createImage("background.png");
 
+    //Ustawienia głównego panelu w którym rozgrywana jest gra
     Body()
     {
         setBackground(Color.WHITE);
@@ -30,6 +30,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         this.add(correct);
     }
 
+    //fukncja odpowiedzialna za rysowanie postaci oraz tła
     public void paintComponent(Graphics d)
     {
         super.paintComponent(d);
@@ -37,6 +38,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         d.drawImage(img, x, y,null);
     }
 
+    //Sprawdzanie pozycji bohatera oraz kolizji z wylosowanymi liczbami
     @Override
     public void actionPerformed(ActionEvent e)
     {
@@ -57,6 +59,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             //JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
         }
 
+        //ograniczenie pola rozgrywki
         if(x<0)
         {
             x=0;
@@ -77,17 +80,15 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             y=650;
             vy=0;
         }
-
         x = x+vx;
         y = y+vy;
         repaint();
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {}
 
-    }
-
+    //funckja odpowiedzialna za ponowne losowanie i rysowanie liczb
     public void again(){
         Window window = new Window("Zabawa Matematyczna");
         window.setScore(score);
@@ -107,6 +108,8 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             }
       //  JOptionPane.showMessageDialog(null, "Koniec gry", "Koniec", JOptionPane.INFORMATION_MESSAGE);
     }
+
+    //Poruszanie się postacią po ekranie (1)
     @Override
     public void keyPressed(KeyEvent e)
     {
@@ -121,6 +124,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         { vy=5; vx=0; }
     }
 
+    //Poruszanie się postacią po ekranie (2)
     @Override
     public void keyReleased(KeyEvent e)
     {
@@ -131,6 +135,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         if(c == KeyEvent.VK_DOWN) { vy=0; }
     }
 
+    //sprawdzanie kolizji z niepoprawnym wynikiem (1)
     public boolean falseResult1 (int x, int  y, int randomXfalse1, int randomYfalse1){
         Rectangle label = new Rectangle(randomXfalse1, randomYfalse1, 50, 50);
 
@@ -139,6 +144,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
+    //sprawdzanie kolizji z niepoprawnym wynikiem (2)
     public boolean falseResult2 (int x, int  y, int randomXfalse2, int randomYfalse2){
         Rectangle label = new Rectangle(randomXfalse2, randomYfalse2, 50, 50);
 
@@ -147,6 +153,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
+    //sprawdzanie kolizji z poprawnym wynikiem
     public boolean correctResult (int x, int  y, int randomX, int randomY){
         Rectangle label = new Rectangle(randomX, randomY, 50, 50);
 
@@ -155,6 +162,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
+    //losowanie współrzędnej X poprawnego wyniku
     public int randomX(){
         int x;
         Random rand = new Random();
@@ -163,6 +171,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
+    //losowanie współrzędnej Y poprawnego wyniku
     public int randomY(){
         int y;
         Random rand = new Random();
@@ -171,6 +180,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return y;
     }
 
+    //losowanie współrzędnej X niepoprawnego wyniku
     public int randomXfalse1(){
         int x;
         Random rand = new Random();
@@ -179,6 +189,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
+    //losowanie współrzędnej Y niepoprawnego wyniku
     public int randomYfalse1(){
         int x;
         Random rand = new Random();
@@ -186,6 +197,8 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         randomYfalse1 = x;
         return x;
     }
+
+    //losowanie współrzędnej X niepoprawnego wyniku
     public int randomXfalse2(){
         int x;
         Random rand = new Random();
@@ -194,6 +207,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
+    //losowanie współrzędnej Y niepoprawnego wyniku
     public int randomYfalse2(){
         int x;
         Random rand = new Random();
@@ -202,6 +216,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
+    //ustalanie parametrów (czcionki, rozmiaru, wielkości, wartości, współrzędnych) wylosowanych wyników
     public void losowanie(int temp, String temp2,String temp3){
         firstFalse.setText(temp2);
         firstFalse.setLocation(this.randomXfalse1(),randomYfalse1());
@@ -218,5 +233,4 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         correct.setSize(50,50);
         correct.setFont(new Font("Arial", Font.ITALIC, 20));
     }
-
 }
