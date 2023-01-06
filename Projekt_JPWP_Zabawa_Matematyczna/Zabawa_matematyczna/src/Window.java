@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 
-public class Window extends  JFrame implements ActionListener {
+public class Window extends JFrame implements ActionListener {
    Body body = new Body();
    JPanel top;
     JPanel panel;
@@ -16,11 +16,13 @@ public class Window extends  JFrame implements ActionListener {
    JButton normal;
    JButton hard;
    JLabel timeLabel;
-   JLabel result;
+   public JLabel result;
    JLabel question;
    Timer timer;
    int second, minute,temp;
    String ddSecond, ddMinute;
+
+   public int level=1;
    DecimalFormat dFormat = new DecimalFormat("00");
    Image img = Toolkit.getDefaultToolkit().createImage("background.png");
 
@@ -83,7 +85,7 @@ public class Window extends  JFrame implements ActionListener {
         question.setText("Działanie do wykonania");
         question.setBounds(600,150,50,50);
 
-        result.setText("Wynik: " + body.someoneScored());
+        result.setText("Wynik: 0");
         result.setBounds(50,50,50,50);
 
         buttons = new JPanel();
@@ -148,33 +150,44 @@ public class Window extends  JFrame implements ActionListener {
    @Override
    public void actionPerformed(ActionEvent ae)
    {
-      for(int i=1; i<5; i++){
-      if(ae.getSource() == easy) {
-
+      if(ae.getSource() == easy)
+      {
+         level = 1;
          question.setText(liczenie.easy());
          normalTimer();
          timer.restart();
          body.setLayout(null);
-         body.losowanie(liczenie.result_e(), liczenie.falseResult_e1(), liczenie.falseResult_e2());
-      }
+         body.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
+
       }
       if(ae.getSource() == normal)
       {
+         level = 2;
          question.setText(liczenie.normal());
          normalTimer();
          timer.restart();
+         body.setLayout(null);
          body.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
       }
       if(ae.getSource() == hard)
       {
+         level = 3;
          question.setText(liczenie.hard());
          normalTimer();
          timer.restart();
+         body.setLayout(null);
          body.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
       }
       if(ae.getSource() == exit)
       {
          System.exit(0);
       }
+   }
+
+   public void setScore(int score){
+      result.setText("Wynik: " + score);
+   }
+   public void setQuestion(String ques){
+      question.setText(ques);
    }
 }

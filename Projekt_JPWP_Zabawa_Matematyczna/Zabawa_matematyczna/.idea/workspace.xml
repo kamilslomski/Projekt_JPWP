@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#8 dodanie bohatera, czekamy na tlo">
+    <list default="true" id="d8266484-aa93-4db1-81e1-fedf95372c00" name="Changes" comment="#9 tło działa, wynik średnio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Body.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Zabawa_matematyczna/Window.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/liczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/liczenie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,7 @@
       <workItem from="1672677886202" duration="4939000" />
       <workItem from="1672685566105" duration="36000" />
       <workItem from="1672696332588" duration="1059000" />
-      <workItem from="1673021016263" duration="158000" />
+      <workItem from="1673021016263" duration="1942000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1667811469049</created>
@@ -216,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672685488349</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="#8 dodanie bohatera, czekamy na tlo">
+      <created>1673022094965</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673022094965</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +264,7 @@
     <MESSAGE value="#6 losowanie złej liczby i dalsza próba kwadratów" />
     <MESSAGE value="#7 działa losowanie i wyświetlanie cyfr" />
     <MESSAGE value="#8 dodanie bohatera, czekamy na tlo" />
-    <option name="LAST_COMMIT_MESSAGE" value="#8 dodanie bohatera, czekamy na tlo" />
+    <MESSAGE value="#9 tło działa, wynik średnio" />
+    <option name="LAST_COMMIT_MESSAGE" value="#9 tło działa, wynik średnio" />
   </component>
 </project>

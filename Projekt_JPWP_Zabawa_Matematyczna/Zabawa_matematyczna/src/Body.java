@@ -7,6 +7,7 @@ import java.awt.event.KeyListener;
 import java.util.Random;
 
 public class Body extends JPanel implements ActionListener, KeyListener {
+
     Timer timer = new Timer(15, this);
     int x, vx, y, vy = 0, score=-1;
     JLabel firstFalse = new JLabel("");
@@ -15,6 +16,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     int randomX = 100, randomY = 100, randomXfalse1 = 100, randomYfalse1 = 100,randomXfalse2 = 100, randomYfalse2 = 100;
     Image img = Toolkit.getDefaultToolkit().createImage("bohater.png");
     Image img2 = Toolkit.getDefaultToolkit().createImage("background.png");
+
     Body()
     {
         setBackground(Color.WHITE);
@@ -28,13 +30,10 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         this.add(correct);
     }
 
-//    public void paint(Graphics g)
-//    {
-//        g.drawImage(img2, 0, 0, null);
-//    }
     public void paintComponent(Graphics d)
     {
         super.paintComponent(d);
+        d.drawImage(img2, 0, 0, null);
         d.drawImage(img, x, y,null);
     }
 
@@ -45,20 +44,20 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     {
         if (correctResult(x, y, randomX, randomY)) {
             System.out.println("good intersection");
-//            JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
-            someoneScored();
+            //JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
+            score++;
+            again();
         }
         if (falseResult1(x, y, randomXfalse1, randomYfalse1)) {
             System.out.println("bad intersection");
-            JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
-            System.exit(0);
+            again();
+            //JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
         }
         if (falseResult2(x, y, randomXfalse2, randomYfalse2)) {
             System.out.println("bad intersection");
-            JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
-            System.exit(0);
+            again();
+            //JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
         }
-
 
         if(x<0)
         {
@@ -75,9 +74,9 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             y=0;
             vy=0;
         }
-        if(y>462)
+        if(y>650)
         {
-            y=462;
+            y=650;
             vy=0;
         }
 
@@ -86,14 +85,31 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         repaint();
     }
 
-
     @Override
     public void keyTyped(KeyEvent e) {
 
     }
-    public int someoneScored(){
-        score++;
-        return score;
+
+    public void again(){
+        Window window = new Window("Zabawa Matematyczna");
+        window.setScore(score);
+        setLayout(null);
+        if (window.level == 1){
+            window.setQuestion(liczenie.easy());
+            losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
+        }
+        else if (window.level == 2){
+            window.setQuestion(liczenie.normal());
+            losowanie(liczenie.result_n(),liczenie.falseResult_n1(),liczenie.falseResult_n2());
+        }
+        else if (window.level == 3){
+            window.setQuestion(liczenie.hard());
+            losowanie(liczenie.result_h(),liczenie.falseResult_h1(),liczenie.falseResult_h2());
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Niestety, coś kurwa nie działa!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);
+        }
     }
     @Override
     public void keyPressed(KeyEvent e)
