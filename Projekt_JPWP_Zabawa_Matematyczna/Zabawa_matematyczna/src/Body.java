@@ -26,7 +26,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     JLabel questionLabel = new JLabel();
 
 
-    //Ustawienia głównego panelu w którym rozgrywana jest gra
+    /*Ustawienia głównego panelu w którym rozgrywana jest gra */
     Body()
     {
         questionLabel.setText(question);
@@ -47,7 +47,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
 
     }
 
-    //fukncja odpowiedzialna za rysowanie postaci oraz tła
+    /*fukncja odpowiedzialna za rysowanie postaci oraz tła*/
     public void paintComponent(Graphics d)
     {
         super.paintComponent(d);
@@ -55,13 +55,12 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         d.drawImage(img, x, y,null);
     }
 
-    //Sprawdzanie pozycji bohatera oraz kolizji z wylosowanymi liczbami
+    /*Sprawdzanie pozycji bohatera oraz kolizji z wylosowanymi liczbami*/
     @Override
     public void actionPerformed(ActionEvent e)
     {
         if (correctResult(x, y, randomX, randomY)) {
             System.out.println("good intersection");
-            //JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
             score++;
             iteration++;
             again();
@@ -77,7 +76,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             again();
         }
 
-        //ograniczenie pola rozgrywki
+        /*ograniczenie pola rozgrywki*/
         if(x<0)
         {
             x=0;
@@ -106,13 +105,13 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {}
 
-    //zmienne odpowiedzialne za zapis wyników do pliku .txt
+    /*zmienne odpowiedzialne za zapis wyników do pliku .txt*/
     FileWriter fWritter = null;
     BufferedWriter bWritter = null;
     PrintWriter print = null;
     Date date = new Date();
 
-    //funckja odpowiedzialna za ponowne losowanie i rysowanie liczb
+    /*funckja odpowiedzialna za ponowne losowanie i rysowanie liczb*/
     public void again(){
         scoreLabel.setText("Wynik " + score);
             if (iteration >= 5) {
@@ -145,7 +144,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             }
     }
 
-    //Poruszanie się postacią po ekranie (1)
+    /*Poruszanie się postacią po ekranie (1)*/
     @Override
     public void keyPressed(KeyEvent e)
     {
@@ -160,7 +159,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         { vy=5; vx=0; }
     }
 
-    //Poruszanie się postacią po ekranie (2)
+    /*Poruszanie się postacią po ekranie (2)*/
     @Override
     public void keyReleased(KeyEvent e)
     {
@@ -171,7 +170,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         if(c == KeyEvent.VK_DOWN) { vy=0; }
     }
 
-    //sprawdzanie kolizji z niepoprawnym wynikiem (1)
+    /*sprawdzanie kolizji z niepoprawnym wynikiem (1)*/
     public boolean falseResult1 (int x, int  y, int randomXfalse1, int randomYfalse1){
         Rectangle label = new Rectangle(randomXfalse1, randomYfalse1, 50, 50);
 
@@ -180,7 +179,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
-    //sprawdzanie kolizji z niepoprawnym wynikiem (2)
+    /*sprawdzanie kolizji z niepoprawnym wynikiem (2)*/
     public boolean falseResult2 (int x, int  y, int randomXfalse2, int randomYfalse2){
         Rectangle label = new Rectangle(randomXfalse2, randomYfalse2, 50, 50);
 
@@ -189,7 +188,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
-    //sprawdzanie kolizji z poprawnym wynikiem
+    /*sprawdzanie kolizji z poprawnym wynikiem*/
     public boolean correctResult (int x, int  y, int randomX, int randomY){
         Rectangle label = new Rectangle(randomX, randomY, 50, 50);
 
@@ -198,7 +197,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return (result.getWidth() > 0 && result.getHeight() > 0);
     }
 
-    //losowanie współrzędnej X poprawnego wyniku
+    /*losowanie współrzędnej X poprawnego wyniku*/
     public int randomX(){
         int x;
         Random rand = new Random();
@@ -207,7 +206,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
-    //losowanie współrzędnej Y poprawnego wyniku
+    /*losowanie współrzędnej Y poprawnego wyniku*/
     public int randomY(){
         int y;
         Random rand = new Random();
@@ -216,7 +215,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return y;
     }
 
-    //losowanie współrzędnej X niepoprawnego wyniku
+    /*losowanie współrzędnej X niepoprawnego wyniku*/
     public int randomXfalse1(){
         int x;
         Random rand = new Random();
@@ -225,7 +224,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
-    //losowanie współrzędnej Y niepoprawnego wyniku
+    /*losowanie współrzędnej Y niepoprawnego wyniku*/
     public int randomYfalse1(){
         int x;
         Random rand = new Random();
@@ -234,7 +233,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
-    //losowanie współrzędnej X niepoprawnego wyniku
+    /*losowanie współrzędnej X niepoprawnego wyniku*/
     public int randomXfalse2(){
         int x;
         Random rand = new Random();
@@ -243,7 +242,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
-    //losowanie współrzędnej Y niepoprawnego wyniku
+    /*losowanie współrzędnej Y niepoprawnego wyniku*/
     public int randomYfalse2(){
         int x;
         Random rand = new Random();
@@ -252,7 +251,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
         return x;
     }
 
-    //ustalanie parametrów (czcionki, rozmiaru, wielkości, wartości, współrzędnych) wylosowanych wyników
+    /*ustalanie parametrów (czcionki, rozmiaru, wielkości, wartości, współrzędnych) wylosowanych wyników*/
     public void losowanie(int temp, String temp2,String temp3){
         firstFalse.setText(temp2);
         firstFalse.setLocation(this.randomXfalse1(),randomYfalse1());
