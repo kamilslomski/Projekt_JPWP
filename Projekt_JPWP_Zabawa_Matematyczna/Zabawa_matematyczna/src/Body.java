@@ -4,30 +4,47 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
+import java.util.Date;
 
 public class Body extends JPanel implements ActionListener, KeyListener {
     Timer timer = new Timer(15, this);
-    int x, vx, y, vy = 0, score=0;
+    int x=15, vx=0, y=0, vy = 0;
+    public int score=0, level, iteration = 0;
     JLabel firstFalse = new JLabel("");
     JLabel secondFalse = new JLabel("");
     JLabel correct = new JLabel("");
     int randomX = 100, randomY = 100, randomXfalse1 = 100, randomYfalse1 = 100,randomXfalse2 = 100, randomYfalse2 = 100;
     Image img = Toolkit.getDefaultToolkit().createImage("bohater.png");
     Image img2 = Toolkit.getDefaultToolkit().createImage("background.png");
+    String question = "";
+    JLabel scoreLabel = new JLabel("Wynik: 0");
+    JLabel questionLabel = new JLabel();
+
 
     //Ustawienia głównego panelu w którym rozgrywana jest gra
     Body()
     {
-        setBackground(Color.WHITE);
+        questionLabel.setText(question);
         setLayout(new GridBagLayout());
         timer.start();
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-        this.add(firstFalse);
-        this.add(secondFalse);
-        this.add(correct);
+        add(firstFalse);
+        add(secondFalse);
+        add(correct);
+        setLayout(null);
+        scoreLabel.setBounds(400,-17,50,50);
+        add(scoreLabel);
+        questionLabel.setBounds(800,-17,200,50);
+        questionLabel.setText("Działanie do wykonania");
+        add(questionLabel);
+
     }
 
     //fukncja odpowiedzialna za rysowanie postaci oraz tła
@@ -46,15 +63,18 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             System.out.println("good intersection");
             //JOptionPane.showMessageDialog(null, "Brawo, to jest poprawny wynik!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
             score++;
+            iteration++;
             again();
         }
         if (falseResult1(x, y, randomXfalse1, randomYfalse1)) {
             System.out.println("bad intersection");
+            iteration++;
             again();
             //JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
         }
         if (falseResult2(x, y, randomXfalse2, randomYfalse2)) {
             System.out.println("bad intersection");
+            iteration++;
             again();
             //JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -70,9 +90,9 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             x=1245;
             vx=0;
         }
-        if(y<0)
+        if(y<15)
         {
-            y=0;
+            y=15;
             vy=0;
         }
         if(y>650)
@@ -88,25 +108,43 @@ public class Body extends JPanel implements ActionListener, KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {}
 
+    //zmienne odpowiedzialne za zapis wyników do pliku .txt
+    FileWriter fWritter = null;
+    BufferedWriter bWritter = null;
+    PrintWriter print = null;
+    Date date = new Date();
+
     //funckja odpowiedzialna za ponowne losowanie i rysowanie liczb
     public void again(){
-        Window window = new Window("Zabawa Matematyczna");
-        window.setScore(score);
-        setLayout(null);
-            if (window.level == 1) {
-                window.setQuestion(liczenie.easy());
+        scoreLabel.setText("Wynik " + score);
+            if (iteration >= 5) {
+                try
+                {
+                    fWritter = new FileWriter("Wynki.txt", true);
+                    bWritter = new BufferedWriter(fWritter);
+                    print = new PrintWriter(bWritter);
+
+                    print.println("Koniec gry, otrzymano: " + score + " punktów. Data podejścia: " + date);
+                    print.flush();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                JOptionPane.showMessageDialog(null, "Koniec gry, otrzymano " + score + " punktów", "Koniec", JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0);
+            }
+            else if (level == 1) {
+                questionLabel.setText(liczenie.easy());
                 losowanie(liczenie.result_e(), liczenie.falseResult_e1(), liczenie.falseResult_e2());
-            } else if (window.level == 2) {
-                window.setQuestion(liczenie.normal());
+            } else if (level == 2) {
+                questionLabel.setText(liczenie.normal());
                 losowanie(liczenie.result_n(), liczenie.falseResult_n1(), liczenie.falseResult_n2());
-            } else if (window.level == 3) {
-                window.setQuestion(liczenie.hard());
+            } else if (level == 3) {
+                questionLabel.setText(liczenie.hard());
                 losowanie(liczenie.result_h(), liczenie.falseResult_h1(), liczenie.falseResult_h2());
             } else {
                 JOptionPane.showMessageDialog(null, "Niestety, coś kurwa nie działa!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
                 System.exit(0);
             }
-      //  JOptionPane.showMessageDialog(null, "Koniec gry", "Koniec", JOptionPane.INFORMATION_MESSAGE);
     }
 
     //Poruszanie się postacią po ekranie (1)

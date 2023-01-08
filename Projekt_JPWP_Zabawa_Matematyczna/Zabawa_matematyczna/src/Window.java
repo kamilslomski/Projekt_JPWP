@@ -19,8 +19,6 @@ public class Window extends JFrame implements ActionListener {
    JButton normal;
    JButton hard;
    JLabel timeLabel;
-   public JLabel result;
-   JLabel question;
    Timer timer;
    int second, minute,temp;
    String ddSecond, ddMinute;
@@ -31,28 +29,23 @@ public class Window extends JFrame implements ActionListener {
         super(nazwa);
 
         //parametry JFrame'a
-        setSize(1280, 1024);
+        setSize(1280, 850);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //ustawienia związane z górnym panelem (czasem, wynikiem oraz działaniem do wykonania)
         timeLabel = new JLabel();
-        result = new JLabel();
-        question = new JLabel();
 
         timeLabel.setText("00:00");
         timeLabel.setVisible(true);
-        timeLabel.setBounds(800,60,50,50);
+        timeLabel.setBounds(800,60,50,20);
 
-        question.setText("Działanie do wykonania");
-        question.setBounds(600,150,50,50);
-
-        result.setText("Wynik: 0");
-        result.setBounds(50,50,50,50);
+        setResizable(false);
 
         top = new JPanel();
-        top.setPreferredSize(new Dimension(1280, 80));
+        top.setPreferredSize(new Dimension(1280, 25));
         top.setLayout(new GridLayout(1, 3));
-        top.setBackground(Color.LIGHT_GRAY);
+        top.setOpaque(true);
+        top.setBackground(Color.WHITE);
 
         JPanel topL = new JPanel();
         JPanel topS = new JPanel();
@@ -60,13 +53,10 @@ public class Window extends JFrame implements ActionListener {
 
         topL.setLayout(new GridBagLayout());
         topP.setLayout(new GridBagLayout());
-        topP.add(result);
-        topL.add(timeLabel);
-        topS.add(question);
 
-        top.add(topL, BorderLayout.WEST);
-        top.add(topS, BorderLayout.CENTER);
-        top.add(topP, BorderLayout.EAST);
+        topL.add(timeLabel);
+
+        top.add(topL, BorderLayout.CENTER);
 
         //ustawienia związane z częścią gdzie jest rozgrywana gra
         panel = new JPanel();
@@ -160,42 +150,46 @@ public class Window extends JFrame implements ActionListener {
    {
       if(ae.getSource() == easy)
       {
-         level = 1;
-         question.setText(liczenie.easy());
-         normalTimer();
-         timer.restart();
-         body.setLayout(null);
-         body.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
-
+          normalTimer();
+          timer.restart();
+          body.setLayout(null);
+          body.question = liczenie.easy();
+          body.questionLabel.setText(body.question);
+          body.level = 1;
+          body.iteration=0;
+          body.scoreLabel.setText("Wynik: 0");
+          body.score = 0;
+          body.losowanie(liczenie.result_e(),liczenie.falseResult_e1(),liczenie.falseResult_e2());
       }
       if(ae.getSource() == normal)
       {
-         level = 2;
-         question.setText(liczenie.normal());
-         normalTimer();
-         timer.restart();
-         body.setLayout(null);
-         body.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
+          normalTimer();
+          timer.restart();
+          body.setLayout(null);
+          body.question = liczenie.normal();
+          body.questionLabel.setText(body.question);
+          body.level = 2;
+          body.iteration=0;
+          body.scoreLabel.setText("Wynik: 0");
+          body.score = 0;
+          body.losowanie(liczenie.result_n(), liczenie.falseResult_n1(),liczenie.falseResult_n2());
       }
       if(ae.getSource() == hard)
       {
-         level = 3;
-         question.setText(liczenie.hard());
-         normalTimer();
-         timer.restart();
-         body.setLayout(null);
-         body.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
+          normalTimer();
+          timer.restart();
+          body.setLayout(null);
+          body.question = liczenie.hard();
+          body.questionLabel.setText(body.question);
+          body.level = 3;
+          body.iteration=0;
+          body.scoreLabel.setText("Wynik: 0");
+          body.score = 0;
+          body.losowanie(liczenie.result_h(), liczenie.falseResult_h1(),liczenie.falseResult_h2());
       }
       if(ae.getSource() == exit)
       {
          System.exit(0);
       }
-   }
-
-   public void setScore(int score){
-      result.setText("Wynik: " + score);
-   }
-   public void setQuestion(String ques){
-      question.setText(ques);
    }
 }
