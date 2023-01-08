@@ -48,11 +48,8 @@ public class Window extends JFrame implements ActionListener {
         top.setBackground(Color.WHITE);
 
         JPanel topL = new JPanel();
-        JPanel topS = new JPanel();
-        JPanel topP = new JPanel();
 
         topL.setLayout(new GridBagLayout());
-        topP.setLayout(new GridBagLayout());
 
         topL.add(timeLabel);
 
