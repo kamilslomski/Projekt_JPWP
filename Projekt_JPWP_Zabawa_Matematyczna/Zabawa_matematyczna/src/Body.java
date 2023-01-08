@@ -70,13 +70,11 @@ public class Body extends JPanel implements ActionListener, KeyListener {
             System.out.println("bad intersection");
             iteration++;
             again();
-            //JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
         }
         if (falseResult2(x, y, randomXfalse2, randomYfalse2)) {
             System.out.println("bad intersection");
             iteration++;
             again();
-            //JOptionPane.showMessageDialog(null, "Niestety, to jest niepoprawny wynik!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
         }
 
         //ograniczenie pola rozgrywki
@@ -142,7 +140,7 @@ public class Body extends JPanel implements ActionListener, KeyListener {
                 questionLabel.setText(liczenie.hard());
                 losowanie(liczenie.result_h(), liczenie.falseResult_h1(), liczenie.falseResult_h2());
             } else {
-                JOptionPane.showMessageDialog(null, "Niestety, coś kurwa nie działa!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Niestety, coś nie działa!", "Niestety", JOptionPane.INFORMATION_MESSAGE);
                 System.exit(0);
             }
     }
